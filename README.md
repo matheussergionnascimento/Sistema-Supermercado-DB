@@ -1,4 +1,5 @@
 # Sistema de Banco de Dados para Supermercado
+![Diagrama do Banco de Dados](Diagrama.png)
 Este repositório contém a arquitetura de banco de dados relacional e a modelagem lógica para o gerenciamento completo de um **Supermercado**. O projeto abrange desde o controle de cadastros base até a extração de relatórios analíticos de inteligência de negócios.
 O modelo e os scripts foram testados e validados no ambiente **MySQL 8.0**.
 ---
