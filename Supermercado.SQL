@@ -975,3 +975,21 @@ ORDER BY total_gasto DESC;
 -- ============================================================
 -- FIM DO BANCO DE DADOS
 -- ============================================================
+
+-- ============================================================
+-- AUTOMATIZAÇÃO - TRIGGER (GATILHO) DE ESTOQUE
+-- ============================================================
+
+DELIMITER $$
+
+CREATE TRIGGER tg_baixa_estoque_venda
+AFTER INSERT ON item_venda
+FOR EACH ROW
+BEGIN
+    -- Atualiza o estoque do produto diminuindo a quantidade vendida
+    UPDATE produto 
+    SET estoque = estoque - NEW.quantidade
+    WHERE id_produto = NEW.id_produto;
+END$$
+
+DELIMITER ;
